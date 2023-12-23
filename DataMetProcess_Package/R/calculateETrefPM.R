@@ -123,11 +123,7 @@ calculateETrefPM <- function(data = NULL,
     )
   )
 
-  data$DAP <-
-    base::seq(
-      from = DAP,
-      to = base::nrow(data)
-    )
+  data$DAP <- seq(from = DAP, length.out = nrow(data),by=1)
 
   data$es <- 0.611*10^((7.5*col_string(data,str = Temp,usestr = T))/ #temperatura
                          (237.3+col_string(data,str = Temp,usestr = T))) #temperatura
