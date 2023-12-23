@@ -9,3 +9,5 @@ Wagner Martins dos Santos
 -To access the portable app, follow the link https://github.com/wagnnerms97/DataMetProcess-Global/tree/main/DataMetProcess_Shiny_Portable
 
 -To launch the application, execute the shortcut located in the root folder.
+
+![Exemplo GIF](gif.gif)
