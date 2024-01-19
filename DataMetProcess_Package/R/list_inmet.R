@@ -39,7 +39,6 @@ list_inmet <- function(
     year=NULL,
     filename = NULL
 ){
-
   Name <- Origin <- End.Date <- Start.Date <- delete <- City <- NULL
 
   if(!base::is.null(filename)){
@@ -56,7 +55,7 @@ list_inmet <- function(
     "https://portal.inmet.gov.br/uploads/dadoshistoricos/",
     year,
     ".zip"
-  ),temp)
+  ),temp, method = "auto", cacheOK = F)
 
   df <- utils::unzip(zipfile = temp, list = TRUE)[1]
   suppressWarnings(
