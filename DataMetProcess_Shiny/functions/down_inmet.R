@@ -15,7 +15,7 @@ list_inmet <- function(ano=NULL){
   #df <- utils::unzip(zipfile = "./Downs/zip_inmet.zip", list = TRUE)[1]
 
   df2 <-
-    df %>%
+    df |> 
     separate(Name,
              c("Ano","Origem"),
              sep=c("/")
@@ -27,18 +27,20 @@ list_inmet <- function(ano=NULL){
   }
   suppressWarnings(
   df2 <-
-    df2 %>%
+    df2 |> 
     separate(
       Origem,
-      c("Origem","Região","Estado","Id","Cidade","Data.Inicial","apagar","Data.Final"),
+      c("Origin","Region","State","Id","City","Start.Date","delete","End.Date"),
       sep=c("_")
-    ) %>%
-    #na.omit() %>%
-    filter(!row_number() == 1) %>%
-    mutate(Data.Final = as.Date(sub(".CSV","",Data.Final),"%d-%m-%Y"),
-           Data.Inicial = as.Date(Data.Inicial,"%d-%m-%Y")) %>%
-    select(-apagar) %>%
-    arrange(Cidade))
+    ) |> 
+    #na.omit() |> 
+    filter(!row_number() == 1) |> 
+    mutate(End.Date = as.Date(sub(".CSV","",End.Date),"%d-%m-%Y"),
+           Start.Date = as.Date(Start.Date,"%d-%m-%Y")) |> 
+    select(-delete) |> 
+    rename(Year = "Ano") |> 
+    arrange(City))
+  
 
   return(list(df,df2,temp))
 }

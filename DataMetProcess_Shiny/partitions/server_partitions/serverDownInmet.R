@@ -31,7 +31,7 @@ serverDownInmet <- function(id){
     }}
   }"),
   columns = list(
-    Cidade = colDef(width = 300))
+    City = colDef(width = 300))
       )
     })
     

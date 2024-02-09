@@ -23,6 +23,12 @@ ui_about <- function(id){
         tags$p("
                wagnnerms97@gmail.com
                "),
+        tags$h3("Help"),
+        tags$a(
+          "Visit github for help on how to use the application",
+          href = "https://github.com/wagnnerms97/DataMetProcess-Global/tree/main/DataMetProcess_Shiny",
+          target="_blank"
+        ),
         tags$h3("Acknowledgements"),
         tags$section(
           class="logos_ack",

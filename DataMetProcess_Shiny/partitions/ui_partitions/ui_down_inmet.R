@@ -11,7 +11,7 @@ ui_down_inmet <- function(id){
             class = "button",
             selectInput(
               NS(id,"AnosDown"),
-              label = "Selecione o ano de download:",
+              label = "Select the download year:",
               choices = 2000:format(Sys.Date(),"%Y")
             )
           ),#div

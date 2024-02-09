@@ -118,7 +118,7 @@ ui_process <- function(id){
 }
 
 
-source("./functions/graficos.R")
+source("./functions/charts.R")
 source("./partitions/ui_partitions/panels/pan_chart.R")
 
 colPick <- function(inputId,label,selected = "#112446"){
